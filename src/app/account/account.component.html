@@ -1,0 +1,32 @@
+<table class = "table table-hover">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Balance </th>
+            <th> dob</th>
+            <th> Account type</th>
+            <th> Address</th>
+            <th> City</th>
+            <th> phone</th>
+            <th> Email</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let account of accounts" >
+            <td> {{ account.name }} </td>
+            <td> {{ account.balance }} </td>
+            <td> {{ account.dob }} </td>
+            <td> {{ account.accountType }} </td>
+            <td> {{ account.address }} </td>
+            <td> {{ account.city }} </td>
+            <td> {{ account.phone }} </td>
+            <td> {{ account.email }} </td>
+            <td>
+                <button (click) = "updateAccount(account.accountId)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteAccount(account.accountId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "accountDetails(account.accountId)" class = "btn btn-success" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+
